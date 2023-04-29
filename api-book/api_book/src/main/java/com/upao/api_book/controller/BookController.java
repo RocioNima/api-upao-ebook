@@ -19,12 +19,12 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @GetMapping
+    @GetMapping("/getBooks")
     public ResponseEntity<List<Book>> getAllBook(){
         return new ResponseEntity<List<Book>>(bookService.getAllBooks(),HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping("/createBook")
     public ResponseEntity<Book> addBook(@RequestParam String title,
                                         @RequestParam String author,
                                         @RequestParam String description,
